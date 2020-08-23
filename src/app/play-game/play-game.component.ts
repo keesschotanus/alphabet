@@ -23,13 +23,15 @@ export class PlayGameComponent implements OnInit {
     const typedLetter = event.key.toLowerCase();
     if (typedLetter === this.alphabet.charAt(this.expectedLetterIndex)) {
       this.scoreService.addScore(this.expectedLetterIndex);
+
+      if (typedLetter === 'z') {
+        console.log(this.scoreService.getTotalScore());
+        this.router.navigate(['/score'])
+      }
+  
       ++this.expectedLetterIndex;
     }
 
-    if (typedLetter === 'z') {
-      console.log(this.scoreService.getTotalScore());
-      this.router.navigate(['/score'])
-    }
   }
 
   get lettersTyped() {
