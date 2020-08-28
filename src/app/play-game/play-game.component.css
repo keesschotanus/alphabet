@@ -1,0 +1,6 @@
+/*
+ * Removes the border from a div that gets the focus.
+ */
+div#alphabetDiv {
+  outline: none;
+}
