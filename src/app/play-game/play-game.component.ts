@@ -22,8 +22,6 @@ export class PlayGameComponent implements OnInit {
   onKeyDown(event: KeyboardEvent) {
     if (event.key.toLowerCase() === 'a') {
       this.scoreService.start();
-      console.log("Game started", this.scoreService.getTotalScore());
-
     }
   }
   
