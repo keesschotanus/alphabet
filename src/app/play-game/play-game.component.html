@@ -1,5 +1,4 @@
-<h1>Play</h1>
-
-<input type="text" (keypress)="onKeyPress($event)">
-<h2>{{ lettersTyped}}</h2>
- 
+<div id="alphabetDiv" (keydown)="onKeyDown($event)" (keyup)="onKeyUp($event)" tabindex="0">
+  <h1>Start typing the alphabet as fast as you can</h1>
+</div>
+<h2>{{ lettersTyped }}</h2>

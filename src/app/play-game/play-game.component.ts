@@ -16,16 +16,23 @@ export class PlayGameComponent implements OnInit {
   }
 
   ngOnInit(): void {
-    this.scoreService.start();
+    document.getElementById('alphabetDiv').focus();
   }
 
-  onKeyPress(event: KeyboardEvent) {
+  onKeyDown(event: KeyboardEvent) {
+    if (event.key.toLowerCase() === 'a') {
+      this.scoreService.start();
+      console.log("Game started", this.scoreService.getTotalScore());
+
+    }
+  }
+  
+  onKeyUp(event: KeyboardEvent) {
     const typedLetter = event.key.toLowerCase();
     if (typedLetter === this.alphabet.charAt(this.expectedLetterIndex)) {
       this.scoreService.addScore(this.expectedLetterIndex);
 
       if (typedLetter === 'z') {
-        console.log(this.scoreService.getTotalScore());
         this.router.navigate(['/score'])
       }
   

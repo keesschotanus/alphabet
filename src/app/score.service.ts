@@ -38,6 +38,7 @@ export class ScoreService {
   start(): void {
     this.startTime = Date.now();
     this.timeAtPreviousLetter = this.startTime;
+    this.totalScore = 0;
   }
 
   /**
