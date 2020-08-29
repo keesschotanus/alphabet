@@ -1,9 +1,40 @@
 <h1>Welcome to alphabet</h1>
-
 <p>
-  This is a simple game where you have to type the alphabet,
-  as fast as you can.
-  I write an alphabet game whenever I learn a new programming language.
+  <img src="../../assets/applet.png" alt="Alphabet image of applet version" style="float: right; margin: 10px">
+  Alphabet is a simple game where all you have to do, is type the alphabet as fast as you can.
+</p>
+<p>
+  I write a new version of Alphabet whenever I learn a new programming language.
+  Previously I have written versions in different BASIC dialects, C, Java
+  and some more obscure languages.<br>
+  The images you see are from the Java version I wrote that uses an
+  <a href="https://en.wikipedia.org/wiki/Java_applet">Applet</a>.
+  It is AWT based and uses an awt.Canvas to draw a histogram.
+  The source was written in the previous millennium and does not work
+  anymore since Applets have been deprecated.
+  Do note the record and the record using only one finger.
+  Can you beat these scores?
 </p>
 
-<button routerLink="/play">Start game</button>
+<h2>Why do I write this Alphabet game?</h2>
+<p>
+  Actually using a new language makes me really learn it.
+  It also forces me to use the tools that come with a new language,
+  like editors and compilers for example.
+  It also requires me to learn about: 
+</p>
+<ul>
+  <li>Data structures</li>
+  <li>Computation</li>
+  <li>I/O</li>
+  <li>Graphing</li>
+</ul>
+
+<h2>This Alphabet Version</h2>
+<p>
+  The Alphabet version you are looking at right now,
+  is written using Angular and TypeScript.
+  It uses a third party library (CanvasJS) to show the score.
+</p>
+
+<a class="navigate" mat-button color="primary" routerLink="/play">Start game</a>
