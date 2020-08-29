@@ -1,1 +1,11 @@
 /* You can add global styles to this file, and also import other style files */
+
+html, body { height: 100%; }
+body { margin: 5; font-family: Roboto, "Helvetica Neue", sans-serif; }
+
+/*
+ * Makes navigation buttons extra large.
+ */
+a.navigate {
+  font-size: xx-large;
+}
