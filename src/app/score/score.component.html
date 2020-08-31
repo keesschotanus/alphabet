@@ -1,3 +1,5 @@
+<h1 *ngIf="isForfeited()">You forfeited the game!</h1>
+
 <h1>Total score: {{ getTotalScore() }}ms (lower is better)</h1>
 <div id="barChartContainer" style="height: 570px; width: 100%;"></div>
 <a class="navigate" mat-button color="primary" routerLink="/play">Play again</a>

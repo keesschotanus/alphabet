@@ -30,6 +30,11 @@ export class ScoreService {
    */
   private scorePerLetter: number[] = [];
 
+  /**
+   * Determines if the user forfeited the game.
+   */
+  private forfeited = false;
+
   constructor() { }
 
   /**
@@ -39,6 +44,7 @@ export class ScoreService {
     this.startTime = Date.now();
     this.timeAtPreviousLetter = this.startTime;
     this.totalScore = 0;
+    this.scorePerLetter = [];
   }
 
   /**
@@ -57,6 +63,21 @@ export class ScoreService {
     this.totalScore += this.scorePerLetter[letterIndex];
 
     this.timeAtPreviousLetter = currentTime;
+  }
+ 
+  /**
+   * User forfeits the game.
+   */
+  forfeit() {
+    this.forfeited = true;
+  }
+
+  /**
+   * Determines if the user has forfeited the game or not.
+   * @returns True when the user has forfeited the game.
+   */
+  isForfeited() {
+    return this.isForfeited;
   }
 
   /**

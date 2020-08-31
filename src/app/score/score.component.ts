@@ -49,5 +49,9 @@ export class ScoreComponent implements OnInit {
   getTotalScore(): number {
     return this.score.getTotalScore();
   }
+
+  isForfeited() {
+    return this.score.isForfeited();
+  }
 }
 
