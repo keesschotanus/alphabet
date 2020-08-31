@@ -23,6 +23,11 @@ export class PlayGameComponent implements OnInit {
     if (event.key.toLowerCase() === 'a') {
       this.scoreService.start();
     }
+
+    if (event.code === 'Escape') {
+      this.scoreService.forfeit();
+      this.router.navigate(['/score'])
+    }
   }
   
   onKeyUp(event: KeyboardEvent) {
@@ -37,6 +42,9 @@ export class PlayGameComponent implements OnInit {
       ++this.expectedLetterIndex;
     }
 
+  }
+
+  onKeyPress(event: KeyboardEvent) {
   }
 
   get lettersTyped() {
