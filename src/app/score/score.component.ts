@@ -50,8 +50,12 @@ export class ScoreComponent implements OnInit {
     return this.score.getTotalScore();
   }
 
-  isForfeited() {
+  isForfeited(): boolean {
     return this.score.isForfeited();
+  }
+
+  isLowScore() {
+    return this.score.isLowScore();
   }
 }
 

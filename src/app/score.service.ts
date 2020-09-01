@@ -1,5 +1,8 @@
 import { Injectable } from '@angular/core';
 
+type LowScore = { score: number, name: string };
+type LowScores = LowScore[];
+
 /**
  * Keeps track of the individual score per letter and the total score.
  * All times and scores are in milliseconds.
@@ -41,6 +44,7 @@ export class ScoreService {
    * Starts the timer.
    */
   start(): void {
+    this.forfeited = false;
     this.startTime = Date.now();
     this.timeAtPreviousLetter = this.startTime;
     this.totalScore = 0;
@@ -77,7 +81,7 @@ export class ScoreService {
    * @returns True when the user has forfeited the game.
    */
   isForfeited() {
-    return this.isForfeited;
+    return this.forfeited;
   }
 
   /**
@@ -94,5 +98,32 @@ export class ScoreService {
    */ 
   getScorePerLetter(): number[] {
     return this.scorePerLetter;
+  }
+
+  /**
+   * Determines if the current score is a new low score.
+   * @returns True in case of a new low score, otherwise false.
+   */
+  isLowScore(): boolean {
+    const lowScores = this.getLowScores();
+    return this.totalScore < lowScores[lowScores.length -1].score;
+  }
+
+  /**
+   * Gets all the low scores.
+   * Currently a list of 10 low scores is maintained.
+   * @return The low scores. 
+   */
+  getLowScores(): LowScores {
+    let storedScores = localStorage.getItem('AlphabetScores');
+    if (storedScores) {
+      return JSON.parse(storedScores);
+    } else {
+      const lowScores: LowScores = [];
+      for (let index = 0; index < 10; ++index) {
+        lowScores[index] = {score: 999999, name: ''}
+      }
+      return lowScores;
+    }
   }
 }
