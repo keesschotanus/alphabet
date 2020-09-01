@@ -57,5 +57,9 @@ export class ScoreComponent implements OnInit {
   isLowScore() {
     return this.score.isLowScore();
   }
+
+  getLowScores() {
+    return this.score.getLowScores();
+  }
 }
 

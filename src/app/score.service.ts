@@ -52,6 +52,15 @@ export class ScoreService {
   }
 
   /**
+   * Resets the current score but not the best low scores.
+   */
+  reset(): void {
+    this.forfeited = false;
+    this.totalScore = 0;
+    this.scorePerLetter = [];
+  }
+
+  /**
    * Computes and stores the score for the letter identified by the supplied letterIndex.
    * @param letterIndex index of the letter for which to store the score.
    *  The letter 'a' has index 0.

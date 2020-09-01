@@ -5,5 +5,14 @@
 <div *ngIf="isLowScore() && !isForfeited()">
   <h1>You have a new low score!</h1>
 </div>
+
+<h1>Low scores</h1>
+<table>
+  <thead><tr><th>Score</th><th>Name</th></tr></thead>
+  <tr *ngFor="let score of getLowScores()">
+    <td> {{ score.score }} </td>
+    <td> {{ score.name }} </td>
+  </tr>
+</table>
 <a class="navigate" mat-button color="primary" routerLink="/play">Play again?</a>
 
