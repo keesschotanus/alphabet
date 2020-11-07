@@ -17,6 +17,7 @@ export class PlayGameComponent implements OnInit {
 
   ngOnInit(): void {
     document.getElementById('alphabetDiv').focus();
+    this.scoreService.reset();
   }
 
   onKeyDown(event: KeyboardEvent) {
